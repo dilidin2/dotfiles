@@ -4,7 +4,7 @@ A minimal, opinionated SwayFX setup running on Debian Testing.
 
 ## Stack
 
-- **WM**: [SwayFX](https://github.com/swaywm/sway) 0.5.3 (fork of Sway with blur, shadows, rounded corners)
+- **WM**: [SwayFX](https://github.com/WillPower3309/swayfx) 0.5.3 (fork of Sway with blur, shadows, rounded corners)
 - **Shell**: [Fish](https://fishshell.com/) with custom prompt
 - **Terminal**: [Foot](https://codeberg.org/dnkl/foot)
 - **Bar**: [Waybar](https://github.com/Alexays/Waybar)
@@ -16,7 +16,7 @@ A minimal, opinionated SwayFX setup running on Debian Testing.
 
 ## Requirements
 
-- **OS**: Debian 13 (Testing) — should work on any Debian-based distro with minor tweaks
+- **OS**: Debian 13 (Trixie) — should work on any Debian-based distro with minor tweaks
 - **Font**: [JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads) (all variants)
 - **Network Manager**: `networkmanager_dmenu` (for Wi-Fi selection when clicking the network icon in Waybar)
 
