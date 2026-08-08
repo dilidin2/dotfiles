@@ -2,6 +2,18 @@
 
 A minimal, opinionated SwayFX setup running on Debian Testing.
 
+## Screenshots
+
+<table>
+  <tr>
+    <td><img src="docs/dotfiles-overview-1.png" alt="SwayFX workspace" width="480"></td>
+    <td><img src="docs/dotfiles-overview-2.png" alt="SwayFX layout" width="480"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="docs/dotfiles-overview-3.png" alt="SwayFX terminal" width="960"></td>
+  </tr>
+</table>
+
 ## Stack
 
 - **WM**: [SwayFX](https://github.com/WillPower3309/swayfx) 0.5.3 (fork of Sway with blur, shadows, rounded corners)
