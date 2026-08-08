@@ -1,0 +1,23 @@
+{
+  "name": "orange",
+  "colors": {
+    "bg": "#1c130c",
+    "bg-secondary": "#1c130c",
+    "bg-hover": "#70635b",
+    "primary": "#AD5921",
+    "primary-light": "#AD5921",
+    "primary-dark": "#CD6E2B",
+    "accent": "#CD6E2B",
+    "accent-urgent": "#C67249",
+    "lavender": "#DB8A36",
+    "lavender-dark": "#E59F57",
+    "text": "#c6c4c2",
+    "text-primary": "#c6c4c2",
+    "text-secondary": "#c6c4c2",
+    "text-muted": "#C67249",
+    "terminal-green": "#CD6E2B",
+    "terminal-yellow": "#C67249",
+    "terminal-blue": "#DB8A36",
+    "terminal-cyan": "#D9A667"
+  }
+}

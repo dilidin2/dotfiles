@@ -1,0 +1,23 @@
+{
+  "name": "emerald",
+  "colors": {
+    "bg": "#122a1e",
+    "bg-secondary": "#122a1e",
+    "bg-hover": "#61766c",
+    "primary": "#55834E",
+    "primary-light": "#55834E",
+    "primary-dark": "#508777",
+    "accent": "#508777",
+    "accent-urgent": "#C5A856",
+    "lavender": "#477787",
+    "lavender-dark": "#3F828A",
+    "text": "#c3c9c6",
+    "text-primary": "#c3c9c6",
+    "text-secondary": "#c3c9c6",
+    "text-muted": "#C5A856",
+    "terminal-green": "#508777",
+    "terminal-yellow": "#C5A856",
+    "terminal-blue": "#477787",
+    "terminal-cyan": "#61998F"
+  }
+}

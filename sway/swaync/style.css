@@ -1,0 +1,215 @@
+/* ═══════════════════════════════════════════════════════════
+ * SwayNC Style - Soft Lavender Theme
+ * Matches: SwayFX + Waybar + Wofi aesthetic
+ * ═══════════════════════════════════════════════════════════ */
+
+/* ─── Theme Colors ─── */
+@define-color bg               rgba(18, 42, 30, 0.95);
+@define-color bg-secondary     rgba(18, 42, 30, 0.8);
+@define-color bg-hover         rgba(85, 131, 78, 0.1);
+@define-color bg-active        rgba(85, 131, 78, 0.15);
+@define-color border           rgba(71, 119, 135, 0.25);
+@define-color border-active    #477787;
+@define-color text             #c3c9c6;
+@define-color text-secondary   #C5A856;
+@define-color primary          #477787;
+@define-color secondary        #3F828A;
+@define-color accent           #508777;
+@define-color light            #55834E;
+@define-color muted-20         rgba(197, 168, 86, 0.2);
+@define-color primary-30       rgba(85, 131, 78, 0.3);
+@define-color primary-50       rgba(85, 131, 78, 0.5);
+
+/* ─── Window ─── */
+window {
+    background: @bg;
+    border-radius: 12px;
+    border: 1px solid @border;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    font-family: "JetBrains Mono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+    color: @text;
+}
+
+/* ─── Prevent full-screen dark overlay ─── */
+notificationwindow,
+blankwindow {
+    background: transparent;
+    background-color: transparent;
+}
+
+/* ─── Notification List ─── */
+.notification-row {
+    outline: none;
+    border-radius: 8px;
+    margin: 4px 8px;
+    padding: 0;
+    transition: all 0.15s ease;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+    background: @bg-hover;
+}
+
+/* ─── Notification ─── */
+.notification {
+    background: @bg-secondary;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 0;
+    border-left: 3px solid @primary;
+}
+
+.notification:hover {
+    background: @bg-active;
+    border-left-color: @accent;
+}
+
+.notification-default-action {
+    margin: 0;
+    padding: 0;
+}
+
+/* ─── Notification Text ─── */
+.notification-summary {
+    font-size: 14px;
+    font-weight: 600;
+    color: @text;
+}
+
+.notification-body {
+    font-size: 12px;
+    color: @text-secondary;
+}
+
+/* ─── Notification Time ─── */
+.notification-time {
+    font-size: 10px;
+    color: @text-secondary;
+    margin-top: 4px;
+}
+
+/* ─── Notification Icon ─── */
+.notification-icon {
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+/* ─── Notification Actions ─── */
+.notification-button {
+    background: @bg-secondary;
+    border: 1px solid @border;
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin: 4px 4px 0 0;
+    color: @primary;
+    font-size: 11px;
+    transition: all 0.15s ease;
+}
+
+.notification-button:hover {
+    background: @primary;
+    color: @bg;
+    border-color: @primary;
+}
+
+/* ─── Header ─── */
+#header-button {
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin: 6px 8px;
+    color: @primary;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+
+#header-button:hover {
+    background: @bg-hover;
+    color: @accent;
+}
+
+/* ─── Close Button ─── */
+#close-button {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    padding: 6px;
+    color: @text-secondary;
+    transition: all 0.15s ease;
+}
+
+#close-button:hover {
+    background: @muted-20;
+    color: @accent;
+}
+
+/* ─── Inhibit Toggle ─── */
+#inhibit-notify-toggle {
+    background: @bg-secondary;
+    border: 1px solid @border;
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin: 6px 8px;
+    color: @text-secondary;
+    transition: all 0.15s ease;
+}
+
+#inhibit-notify-toggle:checked {
+    background: @primary;
+    border-color: @primary;
+    color: @bg;
+}
+
+#inhibit-notify-toggle slider {
+    background: @bg;
+    border-radius: 6px;
+}
+
+/* ─── Do Not Disturb ─── */
+#dnd-enable {
+    color: @accent;
+}
+
+/* ─── Empty State ─── */
+#notification-count {
+    background: @primary;
+    color: @bg;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ─── Scrollbar ─── */
+scrollbar {
+    background: transparent;
+    min-width: 6px;
+    border-radius: 3px;
+}
+
+scrollbar slider {
+    background: @primary-30;
+    border-radius: 3px;
+    min-height: 30px;
+}
+
+scrollbar slider:hover {
+    background: @primary-50;
+}
+
+scrollbar slider:active {
+    background: @primary;
+}
+
+/* ─── Urgent Notifications ─── */
+.urgent .notification {
+    border-left-color: @accent;
+}
+
+.urgent .notification-summary {
+    color: @accent;
+}

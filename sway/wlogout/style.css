@@ -1,0 +1,91 @@
+/* ═══════════════════════════════════════════════════════════
+ * Wlogout Style - Salmon Pink Theme
+ * Matches: SwayFX + Waybar + Wofi aesthetic
+ * ═══════════════════════════════════════════════════════════ */
+
+/* ─── Theme Colors ───
+ * theme-switcher.sh matches queste per NOME, non per valore. */
+@define-color bg-92      rgba(18, 42, 30, 0.92);
+@define-color bg-60      rgba(18, 42, 30, 0.60);
+@define-color border-25  rgba(85, 131, 78, 0.25);
+@define-color primary-18 rgba(85, 131, 78, 0.18);
+@define-color primary    #55834E;
+@define-color text       #c3c9c6;
+@define-color muted      #C5A856;
+
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: @bg-92;
+    border-radius: 12px;
+    border: 1px solid @border-25;
+}
+
+button {
+    border-radius: 10px;
+    border-color: @border-25;
+    text-decoration-color: @text;
+    color: @muted;
+    background-color: @bg-60;
+    border-style: solid;
+    border-width: 1px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35%;
+    font-family: "JetBrains Mono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+}
+
+button:focus,
+button:active,
+button:hover {
+    background-color: @primary-18;
+    border-color: @primary;
+    color: @text;
+    outline-style: none;
+}
+
+#lock {
+    background-image: image(
+        url("/usr/share/wlogout/icons/lock.png"),
+        url("/usr/local/share/wlogout/icons/lock.png")
+    );
+}
+
+#logout {
+    background-image: image(
+        url("/usr/share/wlogout/icons/logout.png"),
+        url("/usr/local/share/wlogout/icons/logout.png")
+    );
+}
+
+#suspend {
+    background-image: image(
+        url("/usr/share/wlogout/icons/suspend.png"),
+        url("/usr/local/share/wlogout/icons/suspend.png")
+    );
+}
+
+#hibernate {
+    background-image: image(
+        url("/usr/share/wlogout/icons/hibernate.png"),
+        url("/usr/local/share/wlogout/icons/hibernate.png")
+    );
+}
+
+#shutdown {
+    background-image: image(
+        url("/usr/share/wlogout/icons/shutdown.png"),
+        url("/usr/local/share/wlogout/icons/shutdown.png")
+    );
+}
+
+#reboot {
+    background-image: image(
+        url("/usr/share/wlogout/icons/reboot.png"),
+        url("/usr/local/share/wlogout/icons/reboot.png")
+    );
+}
