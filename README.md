@@ -2,7 +2,7 @@
 
 Configurazione personale di Matteo — **niri** su **openSUSE Tumbleweed**.
 
-Presa di mira: il PC desktop a Pontedera (Ryzen 7 7800X3D, RX 7900 XT).
+Desktop (Ryzen 7 7800X3D, RX 7900 XT).
 Due monitor: DP-3 (1920x1080@144) al centro, HDMI-A-1 (1920x1080@60) a sinistra.
 
 ## Stack
