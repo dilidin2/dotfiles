@@ -17,6 +17,20 @@ Due monitor: DP-3 (1920x1080@144) al centro, HDMI-A-1 (1920x1080@60) a sinistra.
 | Media | playerctl (MPRIS) |
 | Screen | wlogout, swaybg (wallpaper) |
 
+## Font
+
+Font che uso, installabili con `zypper`:
+
+| Font | Uso | Package zypper |
+|---|---|---|
+| Poppins | UI — geometric sans | `google-poppins-fonts` |
+| Source Code Pro | codice/terminale — mono | `adobe-sourcecodepro-fonts` |
+| Source Sans 3 | UI — humanist sans | `adobe-sourcesans3-fonts` |
+
+```bash
+zypper install google-poppins-fonts adobe-sourcecodepro-fonts adobe-sourcesans3-fonts
+```
+
 ## Struttura
 
 ```
