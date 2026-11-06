@@ -45,4 +45,4 @@ symlink_file "$HOME/.config/quickshell"          "$DOTFILES/quickshell"
 symlink_file "$HOME/.config/systemd/user"        "$DOTFILES/systemd/user"
 
 echo
-echo "Fatto. Ricarica niri: niri msg reload"
+echo "Fatto. Ricarica niri: niri msg action load-config-file"
