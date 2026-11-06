@@ -131,3 +131,6 @@ Senza vinylrip il tasto resta nella UI ma il download fallisce.
 - **git**: il `gitconfig` contiene solo il nome (niente email personale,
   repo pubblico). Per committare usa `dilidin2@users.noreply.github.com`
   come email locale.
+- **turntable**: il player MPRIS (Rust, headless) che fa girare il pannello
+  musica di Quickshell; installato a parte —
+  [turntable](https://github.com/dilidin2/turntable).
