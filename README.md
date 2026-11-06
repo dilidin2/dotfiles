@@ -31,6 +31,46 @@ Font che uso, installabili con `zypper`:
 zypper install google-poppins-fonts adobe-sourcecodepro-fonts adobe-sourcesans3-fonts
 ```
 
+## Palette colori — "aubergine"
+
+Tema custom dello shell (non una palette nominata tipo Catppuccin/Gruvbox).
+Definita in `quickshell/Theme.qml` — cambiare un valore lì aggiorna cornice, barra, dock e pannelli.
+
+**Fondi** (colore solido identico tra cornice e pannelli; blur rimosso perché
+i semi-trasparenti venivano "out di tono" col wallpaper dietro):
+
+| Nome | Hex | Uso |
+|---|---|---|
+| `bgFrame` / `bgPanel` / `bgSolid` | `#191521` | fondo cornice + pannelli |
+| `bgDeep` | `#1f1926` | menu Steam (un po' più profondo) |
+
+**Interazione** (gradiente verso l'alto):
+
+| Nome | Hex | Uso |
+|---|---|---|
+| `hover` | `#2a2338` | hover |
+| `active` | `#3a3050` | elemento attivo |
+| `activeHi` | `#463a5e` | attivo + enfasi |
+
+**Accento e testo:**
+
+| Nome | Hex | Uso |
+|---|---|---|
+| `accent` | `#b48ede` | lilla — accento principale |
+| `accentHi` | `#c79fe6` | lilla chiaro — enfasi |
+| `text` | `#d5cbe0` | testo principale |
+| `textDim` | `#8d7fa3` | testo secondario |
+| `danger` | `#e06c75` | rosso — azioni distruttive |
+
+**Tile statistiche del dock** (una tinta per metrica):
+
+| Nome | Hex | Metrica |
+|---|---|---|
+| `tileRam` | `#3a2f52` | RAM |
+| `tileCpu` | `#2f3a52` | CPU |
+| `tileNet` | `#2f5244` | Rete |
+| `tileVol` | `#52402f` | Volume |
+
 ## Struttura
 
 ```
