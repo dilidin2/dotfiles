@@ -6,7 +6,7 @@ import QtQuick
 import "."
 
 // ─────────────────────────────────────────────────────────────────────
-// Root del port Ignis → Quickshell.
+// Root dello shell.
 //
 //  • cornice su OGNI monitor (DP-3 con barra, HDMI-A-1 solo cornice)
 //  • strut invisibili per riservare i 4 bordi su entrambi

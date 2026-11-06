@@ -25,9 +25,9 @@ PanelWindow {
     anchors { top: true; left: true; right: true; bottom: true }
     exclusionMode: ExclusionMode.Ignore
 
-    // Namespace attesi dalla config niri (layer-rule per il blur):
-    // ^ignis_frame_(top|bottom|left|right)_
-    WlrLayershell.namespace: "ignis_frame_" + root.modelData.name + "_"
+    // Namespace atteso dalla config niri (layer-rule per il blur):
+    // ^frame_  →  es. frame_DP-3_, frame_HDMI-A-1_
+    WlrLayershell.namespace: "frame_" + root.modelData.name + "_"
     WlrLayershell.layer: WlrLayer.Top
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
 

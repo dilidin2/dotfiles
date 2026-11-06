@@ -8,7 +8,7 @@ import "."
 
 // ─────────────────────────────────────────────────────────────────────
 // Menu Steam: flyout a DESTRA del dock, allineato all'icona Steam.
-// Stessa logica di Ignis (dock.py → SteamMenuWindow):
+// Logica del menu Steam:
 //   • giochi recenti (top 5, solo dati locali) → steam://run/<appid>
 //   • separatori
 //   • Libreria / Amici / Store / Impostazioni / Esci (URL ufficiali)

@@ -12,7 +12,7 @@ Due monitor: DP-3 (1920x1080@144) al centro, HDMI-A-1 (1920x1080@60) a sinistra.
 | WM | [niri](https://niri.wiki/) — tiling compositor (colonne, workspaces dinamici) |
 | Shell | [Fish](https://fishshell.com/) con prompt git custom |
 | Terminal | [Ghostty](https://ghostty.org/) — no titlebar, no sessione |
-| Bar/Shell | [Quickshell](https://quickshell.org/) + Ignis (QML) — dock, launcher, musica, wifi |
+| Bar/Shell | [Quickshell](https://quickshell.org/) (QML) — dock, launcher, musica, wifi |
 | Audio | PipeWire + WirePlumber (wpctl) |
 | Media | playerctl (MPRIS) |
 | Screen | wlogout, swaybg (wallpaper) |

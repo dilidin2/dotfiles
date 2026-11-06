@@ -2,7 +2,7 @@ pragma Singleton
 import QtQuick
 
 // ─────────────────────────────────────────────────────────────────────
-// Tema unico del port Ignis → Quickshell.
+// Tema unico dello shell.
 // Ogni costante visiva/dimensionale sta QUI: cambiare un valore qui
 // aggiorna cornice, barra, dock e (in seguito) tutti i pannelli.
 // ─────────────────────────────────────────────────────────────────────
@@ -26,7 +26,7 @@ QtObject {
     readonly property color textDim:  "#8d7fa3"
     readonly property color danger:   "#e06c75"
 
-    // ── Cornice (NON cambiare: sono le misure di Ignis) ──────────────
+    // ── Cornice (NON cambiare: misure calibrate) ─────────────────────
     readonly property int leftW:   40
     readonly property int rightW:  10
     readonly property int topH:    10
@@ -77,7 +77,7 @@ QtObject {
     readonly property color tileNet: "#2f5244"
     readonly property color tileVol: "#52402f"
 
-    // ── Icone locali (copiate da ~/.config/ignis/icons) ──────────────
+    // ── Icone locali ────────────────────────────────────────────────
     readonly property string iconDir: Qt.resolvedUrl("icons/")
     function icon(name) { return theme.iconDir + name }
 

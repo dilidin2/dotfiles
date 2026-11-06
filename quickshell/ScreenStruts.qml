@@ -1,7 +1,7 @@
 import QtQuick
 import "."
 
-// I 4 bordi riservati (come `edge()` in config.py di Ignis).
+// I 4 bordi riservati.
 // Vengono creati per OGNI monitor: la cornice c'è su entrambi.
 Item {
     id: root

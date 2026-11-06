@@ -11,7 +11,7 @@ import pathlib
 import subprocess
 import time
 
-STATE = pathlib.Path(os.environ.get("XDG_RUNTIME_DIR", "/tmp")) / "qs_ignis_stats.json"
+STATE = pathlib.Path(os.environ.get("XDG_RUNTIME_DIR", "/tmp")) / "qs_stats.json"
 APPS = ("steam", "obs64")
 
 

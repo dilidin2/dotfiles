@@ -16,7 +16,7 @@ Item {
     property var screen
 
     // Finestre SOLO dello workspace attivo di QUESTO monitor (reattivo,
-    // stile Ignis: w.workspace_id deve matchare lo workspace attivo).
+    // stile: w.workspace_id deve matchare lo workspace attivo).
     readonly property var activeWinList: {
         if (!root.niri || !root.screen) return []
         var screen = root.screen.name
@@ -171,7 +171,7 @@ Item {
         }
     }
 
-    // ── Bottone dock (centrato come in Ignis: 525 + 36/2 ≈ 543) ─────
+    // ── Bottone dock (centrato: 525 + 36/2 ≈ 543) ─────────────────
     Item {
         id: dockButton
         x: 0

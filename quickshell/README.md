@@ -1,4 +1,4 @@
-# Quickshell Shell (port di Ignis)
+# Quickshell Shell
 
-Port di Ignis (Python/GTK4) a Quickshell (Qt/QML) su niri.
-Vedi ~/SWITCH.md per il piano di migrazione.
+Shell Quickshell (Qt/QML) per niri: dock, launcher, musica, wifi, steam.
+Portato dal mio vecchio shell Python (GTK4).

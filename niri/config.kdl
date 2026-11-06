@@ -24,7 +24,7 @@ layer-rule {
 }
 
 layer-rule {
-    match namespace="^ignis_frame_(top|bottom|left|right)_"
+    match namespace="^frame_"
     background-effect {
         xray false
     }

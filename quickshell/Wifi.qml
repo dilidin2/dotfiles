@@ -93,7 +93,7 @@ MorphPanel {
         setTimeout(() => { proc.running = true }, 1500)
     }
     function disconnectNet() {
-        // come Ignis: prende il nome della connessione attiva e fa "con down"
+        // prende il nome della connessione attiva e fa "con down"
         Quickshell.execDetached(["/bin/bash", "-c",
             "name=$(nmcli -t -f NAME,TYPE con show --active 2>/dev/null | head -1 | cut -d: -f1); "
             + "[ -n \"$name\" ] && nmcli con down \"$name\" 2>/dev/null"])

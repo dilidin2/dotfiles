@@ -6,7 +6,7 @@ Uso:
     launcher_apps.py bump ID    → incrementa il conteggio d'uso di ID
 
 Il conteggio d'uso sta in ~/.config/quickshell/app_usage.json
-(anche qui l'id .desktop è la chiave, come in Ignis).
+(anche qui l'id .desktop è la chiave).
 """
 import os
 import sys
