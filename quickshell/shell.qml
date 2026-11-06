@@ -114,6 +114,7 @@ ShellRoot {
         id: musicPanel
         screen: shellRoot.dp3
         onOpenNewPlaylist: (song) => { newPl.openPl(song) }
+        onOpenRipFlyout: ripFlyout.openRip()
     }
 
     // Flyout "Nuova playlist" (a destra del pannello musica)
@@ -122,6 +123,14 @@ ShellRoot {
         screen: shellRoot.dp3
         onCreated: (name) => { musicPanel.rescan(); newPl.open = false }
         onCancelRequested: newPl.open = false
+    }
+
+    // Flyout "Scarica brano" (a destra del pannello musica): link → vinylrip
+    RipFlyout {
+        id: ripFlyout
+        screen: shellRoot.dp3
+        onDone: musicPanel.rescan()
+        onCancelRequested: ripFlyout.open = false
     }
 
     // Flyout a destra del Wi-Fi: stessa animazione, mostra password /

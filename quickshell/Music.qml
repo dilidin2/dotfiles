@@ -37,6 +37,18 @@ MorphPanel {
     // ── stato ────────────────────────────────────────────────────────
     property string view: "songs"
     property var songs: []
+    // ── ricerca ────────────────────────────────────────────────────
+    property string searchText: ""
+    readonly property var filteredSongs: {
+        if (!root.searchText) return root.songs
+        const q = root.searchText.toLowerCase()
+        return root.songs.filter(s =>
+            (s.title && s.title.toLowerCase().includes(q)) ||
+            (s.artist && s.artist.toLowerCase().includes(q)))
+    }
+    readonly property string songsCountText: root.searchText
+        ? (root.filteredSongs.length + " di " + root.songs.length + " canzoni")
+        : (root.songs.length + " canzoni")
     property var playlists: []
     property string currentPl: ""
     property var plSongs: []
@@ -367,6 +379,7 @@ MorphPanel {
     }
     function rescan() { proc.running = true }
     signal openNewPlaylist(string song)
+    signal openRipFlyout()
 
     function openNewPl(songPath) {
         root.openNewPlaylist(songPath)
@@ -984,10 +997,43 @@ MorphPanel {
                         font.weight: Font.Medium
                     }
                     Text {
-                        Layout.fillWidth: true
-                        text: root.songs.length + " canzoni"
+                        text: root.songsCountText
                         color: Theme.textDim
                         font.pixelSize: 11
+                    }
+                    TextField {
+                        id: searchField
+                        Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignVCenter
+                        implicitHeight: 22
+                        placeholderText: "Cerca…"
+                        color: Theme.text
+                        font.pixelSize: 12
+                        background: Rectangle {
+                            color: searchField.activeFocus ? "#2a2338" : "transparent"
+                            radius: Theme.btnR
+                            Behavior on color { ColorAnimation { duration: Theme.hoverMs } }
+                        }
+                        onTextChanged: root.searchText = text.trim()
+                    }
+                    Rectangle {
+                        Layout.preferredWidth: 22
+                        Layout.preferredHeight: 22
+                        radius: 6
+                        color: ripMa.containsMouse ? Theme.hover : "transparent"
+                        Behavior on color { ColorAnimation { duration: Theme.hoverMs } }
+                        IconImage {
+                            anchors.centerIn: parent
+                            implicitSize: 15
+                            source: Theme.icon("search.svg")
+                        }
+                        MouseArea {
+                            id: ripMa
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: root.openRipFlyout()
+                        }
                     }
                 }
 
@@ -999,7 +1045,7 @@ MorphPanel {
                         id: songsList
                         anchors.fill: parent
                         anchors.topMargin: -6
-                        model: root.songs
+                        model: root.filteredSongs
                         clip: true
                         boundsBehavior: Flickable.StopAtBounds
                         delegate: Rectangle {

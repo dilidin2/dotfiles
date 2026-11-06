@@ -99,6 +99,26 @@ git clone git@github.com:dilidin2/dotfiles.git ~/dotfiles
 `install.sh` crea symlink: ogni modifica in `~/dotfiles/` è immediatamente
 visibile nel sistema (e viceversa).
 
+## Extra: vinylrip — scarica brani nel player
+
+Il pannello musica ha un tasto **"Scarica brano"** (lente d'ingrandimento
+nella vista *Brani*): incollando un link YouTube scarica il brano in
+`~/Music/`. Usa [vinylrip](https://github.com/dilidin2/vinylrip),
+**installato a parte** (non fa parte delle dotfiles):
+
+```bash
+# dipendenze runtime + toolchain (in openSUSE go è versionato)
+sudo zypper install yt-dlp ffmpeg go1.27
+# build e install in PATH
+git clone git@github.com:dilidin2/vinylrip.git ~/vinylrip
+cd ~/vinylrip && go build -o vinylrip .
+install -m 755 vinylrip ~/.local/bin/vinylrip
+# directory di download (una volta sola)
+vinylrip path ~/Music
+```
+
+Senza vinylrip il tasto resta nella UI ma il download fallisce.
+
 ## Note
 
 - **niri**: le animazioni/blur sono gestite da niri stesso (no swayfx).
