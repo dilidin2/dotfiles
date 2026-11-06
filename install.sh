@@ -38,6 +38,7 @@ symlink_file "$HOME/.config/niri/config.kdl"     "$DOTFILES/niri/config.kdl"
 symlink_file "$HOME/.config/niri/basicsettings.kdl" "$DOTFILES/niri/basicsettings.kdl"
 symlink_file "$HOME/.config/niri/keybinds.kdl"   "$DOTFILES/niri/keybinds.kdl"
 symlink_file "$HOME/.config/ghostty/config"      "$DOTFILES/ghostty/config"
+symlink_file "$HOME/.config/mako/config"         "$DOTFILES/mako/config"
 
 # --- directory ---
 symlink_file "$HOME/.config/fish"                "$DOTFILES/fish"

@@ -1,0 +1,97 @@
+# ─────────────────────────────────────────────────────────────────────
+# Mako — config di Matteo
+# Palette "aubergine" — coerente con quickshell/Theme.qml
+# Opzioni complete: man mako(5)
+# ─────────────────────────────────────────────────────────────────────
+
+# ── Posizione ────────────────────────────────────────────────────────
+# top-right: classico, non copre la barra in basso né la cornice.
+anchor=top-right
+layer=top
+# margine dal bordo dello schermo (lo allontana dalla cornice).
+outer-margin=16
+
+# ── Dimensione ───────────────────────────────────────────────────────
+width=360
+height=120
+max-visible=5
+
+# ── Font ─────────────────────────────────────────────────────────────
+# Poppins: coeso col resto del UI (Pango font description).
+font=Poppins 10
+
+# ── Palette aubergine ────────────────────────────────────────────────
+# Fondo SOLIDO identico ai pannelli quickshell (#191521), niente blur:
+# i semi-trasparenti venivano "out di tono" col wallpaper dietro.
+background-color=#191521FF
+text-color=#d5cbe0FF
+
+# Bordo sottile con l'accento lilla — definisce la notifica sul desktop.
+border-size=1
+border-color=#b48ede55
+border-radius=12
+
+# ── Spaziature ───────────────────────────────────────────────────────
+# margin: tra una notifica e l'altra.
+margin=8
+# padding: dentro la notifica (testo + icona).
+padding=14
+
+# ── Icone ────────────────────────────────────────────────────────────
+icons=1
+max-icon-size=48
+icon-location=left
+icon-border-radius=8
+
+# ── Timeout e cronologia ─────────────────────────────────────────────
+# 5s di default; 0 = resta fino al dismiss.
+default-timeout=5000
+ignore-timeout=0
+history=1
+max-history=20
+
+# ── Formattazione ────────────────────────────────────────────────────
+# %s = summary (grassetto), %b = body — markup Pango attivo.
+format=<span font_weight="bold">%s</span>\n%b
+
+# ── Gruppamento ──────────────────────────────────────────────────────
+# Stesso app → gruppo: evita lo spam di notifiche identiche.
+group-by=app-name
+
+# ── Progresso (download, caricamenti) ────────────────────────────────
+# Barra lilla sopra il fondo.
+progress-color=over #b48edeFF
+
+# ── Azioni (binding) ─────────────────────────────────────────────────
+# click sinistro  → default action (es. apri l'app)
+on-button-left=invoke-default-action
+# click destro    → dismiss
+on-button-right=dismiss
+# click centrale  → dismiss tutto
+on-button-middle=dismiss-all
+# touch           → dismiss
+on-touch=dismiss
+
+# ═════════════════════════════════════════════════════════════════════
+# REGOLE PER URGENCY (criteria)
+# ═════════════════════════════════════════════════════════════════════
+
+# Urgency critica: niente timeout, bordo rosso, più grande.
+[urgency=critical]
+default-timeout=0
+border-size=2
+border-color=#e06c75FF
+height=140
+
+# Urgency bassa: più piccola, timeout breve.
+[urgency=low]
+height=80
+default-timeout=3000
+
+# ═════════════════════════════════════════════════════════════════════
+# MODO "do-not-disturb"
+#   on:  makoctl mode -a do-not-disturb
+#   off: makoctl mode -r do-not-disturb
+# ═════════════════════════════════════════════════════════════════════
+[mode=do-not-disturb]
+invisible=1
