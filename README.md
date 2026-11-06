@@ -99,12 +99,36 @@ git clone git@github.com:dilidin2/dotfiles.git ~/dotfiles
 `install.sh` crea symlink: ogni modifica in `~/dotfiles/` è immediatamente
 visibile nel sistema (e viceversa).
 
-## Extra: vinylrip — scarica brani nel player
+## Pannello musica
 
-Il pannello musica ha un tasto **"Scarica brano"** (lente d'ingrandimento
-nella vista *Brani*): incollando un link YouTube scarica il brano in
-`~/Music/`. Usa [vinylrip](https://github.com/dilidin2/vinylrip),
-**installato a parte** (non fa parte delle dotfiles):
+Il pannello musica di Quickshell si appoggia a due progetti **a parte**
+(non fanno parte delle dotfiles). Hanno pesi molto diversi:
+
+### turntable — il player (necessario)
+
+[turntable](https://github.com/dilidin2/turntable) è il player MPRIS
+(Rust, headless) dietro il widget: **senza di lui il pannello non riproduce
+niente**. Installalo e avvialo come service user:
+
+```bash
+# dipendenza runtime (riproduzione audio)
+sudo zypper install portaudio-devel
+# build e install del binary
+git clone git@github.com:dilidin2/turntable.git ~/turntable
+cd ~/turntable && cargo build --release
+install -m 755 target/release/turntable ~/.local/bin/turntable
+# service systemd user
+cp systemd/turntable.service ~/.config/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable --now turntable
+```
+
+### vinylrip — scarica brani (opzionale)
+
+Il tasto **"Scarica brano"** (lente d'ingrandimento nella vista *Brani*)
+incolla un link YouTube e lo scarica in `~/Music/`. Usa
+[vinylrip](https://github.com/dilidin2/vinylrip); **senza, il tasto resta
+nella UI ma il download fallisce** (niente di grave: puoi solo non scaricare):
 
 ```bash
 # dipendenze runtime + toolchain (in openSUSE go è versionato)
@@ -116,8 +140,6 @@ install -m 755 vinylrip ~/.local/bin/vinylrip
 # directory di download (una volta sola)
 vinylrip path ~/Music
 ```
-
-Senza vinylrip il tasto resta nella UI ma il download fallisce.
 
 ## Note
 
@@ -131,6 +153,3 @@ Senza vinylrip il tasto resta nella UI ma il download fallisce.
 - **git**: il `gitconfig` contiene solo il nome (niente email personale,
   repo pubblico). Per committare usa `dilidin2@users.noreply.github.com`
   come email locale.
-- **turntable**: il player MPRIS (Rust, headless) che fa girare il pannello
-  musica di Quickshell; installato a parte —
-  [turntable](https://github.com/dilidin2/turntable).
