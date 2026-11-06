@@ -1,0 +1,12 @@
+[Unit]
+Description=Virtual audio sinks for melos/phonema bots (OBS capture)
+After=pipewire-pulse.service
+Wants=pipewire-pulse.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/matteo/.local/bin/create-bot-sinks.sh
+
+[Install]
+WantedBy=default.target

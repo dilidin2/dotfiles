@@ -1,32 +1,49 @@
 if status is-interactive
-    fastfetch | tte expand --final-gradient-stops 508777 477787 --final-gradient-steps 12 --final-gradient-direction vertical
+    # Commands to run in interactive sessions can go here
 end
+fish_add_path $HOME/.nimble/bin
+fish_add_path /opt/OpenCode
 
-# Theme switcher aliases
-alias theme-switch '~/.themes/_scripts/theme-switcher.sh'
-alias new-theme '~/.themes/_scripts/new_theme.py'
+# ---------- Pi: forza il protocollo Kitty per il rendering inline delle immagini ----------
+# (foot supporta il protocollo Kitty graphics, ma pi non lo autodetectta)
+set -gx PI_IMAGE_PROTOCOL kitty
 
-# Git prompt settings
-set -g __fish_git_prompt_show_informative_status 1
-set -g __fish_git_prompt_showdirtystate 1
-set -g __fish_git_prompt_showupstream auto
-set -g __fish_git_prompt_showuntrackedfiles 1
-set -g __fish_git_prompt_showstashstate 1
-set -g __fish_git_prompt_showcolorhints 1
-
-# Custom prompt - Theme colors applied by theme-switcher
+# ---------- Prompt ----------
 function fish_prompt
-    set -l last_status $status
-    set -l stat
-    if test $last_status -ne 0
-        set stat (set_color C5A856)"[$last_status] "(set_color normal)
+    # Salva lo stato dell'ultimo comando PRIMA di ogni altro comando
+    set -l prev_status $status
+
+    # Percorso completo, senza abbreviazioni tipo ~/m/d
+    set -l path "$PWD"
+
+    # Git: ramo + stato
+    set -l gitinfo ""
+    if git branch --show-current 2>/dev/null | read -l branch
+        set gitinfo "$branch"
+        set -l status_parts
+        test (git diff --name-only --cached 2>/dev/null | wc -l) -gt 0; and set status_parts $status_parts "+staged"
+        test (git diff --name-only 2>/dev/null | wc -l) -gt 0; and set status_parts $status_parts "~modificato"
+        test (git ls-files --others --exclude-standard 2>/dev/null | wc -l) -gt 0; and set status_parts $status_parts "?nuovi"
+        if test -n "$status_parts"
+            set gitinfo "$gitinfo ($(string join '/' $status_parts))"
+        end
     end
 
-    string join '' -- \
-        (set_color 55834E)"$USER"(set_color normal)"@" \
-        (set_color c3c9c6)"$hostname"(set_color normal)" " \
-        (set_color c3c9c6)(prompt_pwd)(set_color normal)" " \
-        (fish_git_prompt)" " \
-        $stat \
-        (set_color 3F828A)"▸ "
+    set -l user_color (set_color cyan)
+    set -l path_color (set_color white)
+    set -l git_color (set_color magenta)
+    set -l arrow_color (set_color green)
+    set -l reset (set_color normal)
+
+    # Stato dell'ultimo comando
+    if test $prev_status -ne 0
+        printf '%s[%s]%s %s[%s]%s ' $user_color matteo $reset $path_color $path $reset
+        printf '✘ %s' (set_color red)
+    else
+        printf '%s[%s]%s %s[%s]%s ' $user_color matteo $reset $path_color $path $reset
+        if test -n "$gitinfo"
+            printf ' %s(%s)%s' $git_color "$gitinfo" $reset
+        end
+        printf ' %s›%s ' $arrow_color $reset
+    end
 end

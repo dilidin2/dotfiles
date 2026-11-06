@@ -1,0 +1,13 @@
+# Ghostty — configurazione di Matteo
+#
+# Nessuna titlebar: su Wayland con niri evita la barra server-side
+# (quella "con la X") disegnata da niri. Il tiling lo fa niri.
+# Valori possibili: auto (default), server, client, none.
+window-decoration = none
+
+
+# Non ripristinare la sessione precedente (tab/cwd): le finestre nuove partono in $HOME
+window-save-state = never
+
+# Le finestre nuove NON ereditano la cwd dell'ultima finestra focalizzata
+window-inherit-working-directory = false
