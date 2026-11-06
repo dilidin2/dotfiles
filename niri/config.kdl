@@ -372,10 +372,10 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
 
     // App launcher (morph dall'angolo in alto a destra)
-    Mod+Return hotkey-overlay-title="App Launcher" { spawn-sh "qs ipc call ignis toggle_launcher"; }
+    Mod+Return hotkey-overlay-title="App Launcher" { spawn-sh "qs ipc call shell toggle_launcher"; }
 
     // Dock (morph dal bordo sinistro)
-    Mod+d hotkey-overlay-title="Toggle Dock" { spawn-sh "qs ipc call ignis toggle_dock"; }
+    Mod+d hotkey-overlay-title="Toggle Dock" { spawn-sh "qs ipc call shell toggle_dock"; }
 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.

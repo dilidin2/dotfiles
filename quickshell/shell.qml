@@ -11,7 +11,7 @@ import "."
 //  • cornice su OGNI monitor (DP-3 con barra, HDMI-A-1 solo cornice)
 //  • strut invisibili per riservare i 4 bordi su entrambi
 //  • dock solo su DP-3
-//  • IPC con gli stessi nomi dei comandi Ignis
+//  • IPC shell: qs ipc call shell <comando>
 // ─────────────────────────────────────────────────────────────────────
 ShellRoot {
     id: shellRoot
@@ -156,10 +156,10 @@ ShellRoot {
         screen: shellRoot.dp3
     }
 
-    // ── IPC: stessi nomi dei comandi Ignis ───────────────────────────
-    // Uso: qs ipc call ignis toggle_dock
+    // ── IPC: comandi dello shell (target "shell") ───────────────────────────
+    // Uso: qs ipc call shell toggle_dock
     IpcHandler {
-        target: "ignis"
+        target: "shell"
 
         function toggle_dock(): void { dockPanel.toggle() }
         function open_dock(): void { dockPanel.openPanel() }
